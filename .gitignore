@@ -1,0 +1,5 @@
+.idea
+.states
+.credentials.json
+.terraform
+.terraform.lock.hcl
