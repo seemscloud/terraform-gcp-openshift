@@ -1,35 +1,52 @@
-variable "image" {
-    type = string
+# Metadata (SSH)
+variable "aaa_metadata_aaa-name" {
+  type = string
 }
 
-variable "terraform_ssh_keys_pub" {
-    type = string
+variable "aaa_metadata_aaa-pub_key" {
+  type = string
 }
 
-variable "bastion_name" {
-    type = string
+# Location
+variable "aaa_region_aaa" {
+  type = string
 }
 
-variable "bastion_tags" {
-    type = list(string)
+variable "aaa_zone_aaa" {
+  type = string
 }
 
-variable "bastion_network_cidr" {
-    type = string
+# Networking
+variable "aaa_vpc_aaa-name" {
+  type = string
 }
 
-variable "bastion_machine_type" {
-    type = string
+# Instances (Bastion)
+variable "aaa_instance_aaa-name" {
+  type = string
 }
 
-variable "provider_subnetwork_name" {
-    type = string
+variable "aaa_instance_aaa-image" {
+  type = string
 }
 
-variable "provider_address" {
-    type = string
+variable "aaa_instance_aaa-tags" {
+  type = list(string)
 }
 
+variable "aaa_instance_aaa-type" {
+  type = string
+}
+
+variable "aaa_instance_aaa-cidr" {
+  type = string
+}
+
+variable "aaa_instance_aaa-external_addresses" {
+  type = string
+}
+
+# Dependencies
 variable "dependencies" {
-    type = list(string)
+  type = list(string)
 }

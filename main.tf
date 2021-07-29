@@ -1,12 +1,5 @@
-provider "google" {
-  credentials = ".credentials.json"
-  project = "molten-infusion-277321"
-  region = var.region
-  zone = var.zone
-}
-
-terraform {
-  backend "local" {
-    path = ".states/terraform.tfstate"
-  }
+resource "random_string" "aaa_prefix_aaa" {
+  length = 8
+  special = false
+  upper = false
 }

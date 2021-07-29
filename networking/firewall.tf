@@ -1,6 +1,6 @@
 resource "google_compute_firewall" "from-bastion-to-all" {
-  name = "from-bastion-to-cluster"
-  network = google_compute_network.network.name
+  name = "from-bastion-to-all"
+  network = google_compute_network.aaa_vpc_aaa-name.name
 
   direction = "INGRESS"
 
@@ -14,12 +14,12 @@ resource "google_compute_firewall" "from-bastion-to-all" {
   }
 
   depends_on = [
-    google_compute_network.network]
+    google_compute_network.aaa_vpc_aaa-name]
 }
 
 resource "google_compute_firewall" "from-internet-to-bastion" {
   name = "from-internet-to-bastion"
-  network = google_compute_network.network.name
+  network = google_compute_network.aaa_vpc_aaa-name.name
 
   direction = "INGRESS"
 
@@ -35,12 +35,12 @@ resource "google_compute_firewall" "from-internet-to-bastion" {
   }
 
   depends_on = [
-    google_compute_network.network]
+    google_compute_network.aaa_vpc_aaa-name]
 }
 
 resource "google_compute_firewall" "between-openshift-nodes" {
   name = "between-openshift-nodes"
-  network = google_compute_network.network.name
+  network = google_compute_network.aaa_vpc_aaa-name.name
 
   direction = "INGRESS"
 
@@ -54,12 +54,12 @@ resource "google_compute_firewall" "between-openshift-nodes" {
   }
 
   depends_on = [
-    google_compute_network.network]
+    google_compute_network.aaa_vpc_aaa-name]
 }
 
 resource "google_compute_firewall" "from-internet-to-openshift-masters" {
   name = "from-internet-to-openshift-masters"
-  network = google_compute_network.network.name
+  network = google_compute_network.aaa_vpc_aaa-name.name
 
   direction = "INGRESS"
 
@@ -76,12 +76,12 @@ resource "google_compute_firewall" "from-internet-to-openshift-masters" {
   }
 
   depends_on = [
-    google_compute_network.network]
+    google_compute_network.aaa_vpc_aaa-name]
 }
 
 resource "google_compute_firewall" "from-internet-to-openshift-lb" {
   name = "from-internet-to-openshift-lb"
-  network = google_compute_network.network.name
+  network = google_compute_network.aaa_vpc_aaa-name.name
 
   direction = "INGRESS"
 
@@ -94,10 +94,9 @@ resource "google_compute_firewall" "from-internet-to-openshift-lb" {
     protocol = "tcp"
     ports = [
       "80",
-      "443",
-      "8443"]
+      "443"]
   }
 
   depends_on = [
-    google_compute_network.network]
+    google_compute_network.aaa_vpc_aaa-name]
 }

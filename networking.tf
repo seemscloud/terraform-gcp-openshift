@@ -1,33 +1,40 @@
 module "networking" {
   source = "./networking"
 
-  region = var.region
-  zone = var.zone
+  # Region / Zone
+  aaa_region_aaa = var.aaa_region_aaa
+  aaa_zone_aaa = var.aaa_zone_aaa
 
-  network = var.network
+  # Networking
+  aaa_vpc_aaa-name = local.aaa_vpc_aaa-name
 
-  terraform_user = var.terraform_user
-  terraform_ssh_keys_pub = var.terraform_ssh_key_pub
+  aaa_router_aaa-name = local.aaa_router_aaa-name
+  aaa_router_aaa-region = var.aaa_router_aaa-region
 
-  ansible_user = var.ansible_user
-  ansible_ssh_keys_pub = var.ansible_ssh_key_pub
+  aaa_router_nat_aaa-name = local.aaa_router_nat_aaa-name
+  aaa_router_nat_aaa-count = var.aaa_router_nat_aaa-count
 
-  bastion_name = var.bastion_name
-  bastion_network_cidr = var.bastion_network_cidr
+  # Instances (Bastion)
+  aaa_instance_aaa-name = local.aaa_instance_aaa-name
+  aaa_instance_aaa-cidr = var.aaa_instance_aaa-cidr
 
-  openshift_master_name = var.openshift_master_name
-  openshift_master_count = var.openshift_master_count
-  openshift_master_network_cidr = var.openshift_master_network_cidr
+  # Instances (Openshift - Load Balancer)
+  bbb_instance_aaa-name = local.bbb_instance_aaa-name
+  bbb_instance_aaa-count = var.bbb_instance_aaa-count
+  bbb_instance_aaa-cidr = var.bbb_instance_aaa-cidr
 
-  openshift_compute_name = var.openshift_compute_name
-  openshift_compute_count = var.openshift_compute_count
-  openshift_compute_network_cidr = var.openshift_compute_network_cidr
+  # Instances (Openshift - Master)
+  bbb_instance_bbb-name = local.bbb_instance_bbb-name
+  bbb_instance_bbb-count = var.bbb_instance_bbb-count
+  bbb_instance_bbb-cidr = var.bbb_instance_bbb-cidr
 
-  openshift_infra_name = var.openshift_infra_name
-  openshift_infra_count = var.openshift_infra_count
-  openshift_infra_network_cidr = var.openshift_infra_network_cidr
+  # Instances (Openshift - Compute)
+  bbb_instance_ccc-name = local.bbb_instance_ccc-name
+  bbb_instance_ccc-count = var.bbb_instance_ccc-count
+  bbb_instance_ccc-cidr = var.bbb_instance_ccc-cidr
 
-  openshift_lb_name = var.openshift_lb_name
-  openshift_lb_count = var.openshift_lb_count
-  openshift_lb_network_cidr = var.openshift_lb_network_cidr
+  # Instances (Openshift - Infrastructure)
+  bbb_instance_ddd-name = local.bbb_instance_ddd-name
+  bbb_instance_ddd-count = var.bbb_instance_ddd-count
+  bbb_instance_ddd-cidr = var.bbb_instance_ddd-cidr
 }

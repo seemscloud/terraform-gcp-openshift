@@ -1,83 +1,90 @@
-variable "region" {
+# Location
+variable "aaa_region_aaa" {
   type = string
 }
 
-variable "zone" {
+variable "aaa_zone_aaa" {
   type = string
 }
 
-variable "network" {
+# Networking
+variable "aaa_vpc_aaa-name" {
   type = string
 }
 
-variable "terraform_user" {
+variable "aaa_router_aaa-name" {
   type = string
 }
 
-variable "terraform_ssh_keys_pub" {
+variable "aaa_router_aaa-region" {
   type = string
 }
 
-variable "ansible_user" {
+variable "aaa_router_nat_aaa-name" {
   type = string
 }
 
-variable "ansible_ssh_keys_pub" {
+variable "aaa_router_nat_aaa-count" {
   type = string
 }
 
-variable "bastion_name" {
+# Instances (Bastion)
+variable "aaa_instance_aaa-name" {
   type = string
 }
 
-variable "bastion_network_cidr" {
+variable "aaa_instance_aaa-cidr" {
   type = string
 }
 
-variable "openshift_master_name" {
+# Instances (Openshift - Load Balancer)
+variable "bbb_instance_aaa-name" {
   type = string
 }
 
-variable "openshift_master_count" {
+variable "bbb_instance_aaa-count" {
   type = string
 }
 
-variable "openshift_master_network_cidr" {
+variable "bbb_instance_aaa-cidr" {
   type = string
 }
 
-variable "openshift_compute_name" {
+# Instances (Openshift - Master)
+variable "bbb_instance_bbb-name" {
   type = string
 }
 
-variable "openshift_compute_count" {
+variable "bbb_instance_bbb-count" {
   type = string
 }
 
-variable "openshift_compute_network_cidr" {
+variable "bbb_instance_bbb-cidr" {
   type = string
 }
 
-variable "openshift_infra_name" {
+# Instances (Openshift - Compute)
+variable "bbb_instance_ccc-name" {
   type = string
 }
 
-variable "openshift_infra_count" {
-  type = number
-}
-
-variable "openshift_infra_network_cidr" {
+variable "bbb_instance_ccc-count" {
   type = string
 }
 
-variable "openshift_lb_name" {
+variable "bbb_instance_ccc-cidr" {
   type = string
 }
 
-variable "openshift_lb_count" {
-  type = number
+# Instances (Openshift - Infrastructure)
+variable "bbb_instance_ddd-name" {
+  type = string
 }
 
-variable "openshift_lb_network_cidr" {
+variable "bbb_instance_ddd-count" {
+  type = string
+}
+
+variable "bbb_instance_ddd-cidr" {
   type = string
 }

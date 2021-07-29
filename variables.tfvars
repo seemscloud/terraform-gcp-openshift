@@ -1,62 +1,74 @@
-region = "us-central1"
-zone = "us-central1-a"
+# Region / Zone
+aaa_region_aaa = "us-central1"
+aaa_zone_aaa = "us-central1-a"
 
-image = "ubuntu-os-cloud/ubuntu-1804-lts"
-
-network = "network"
-
-terraform_user = "terraform"
-terraform_ssh_key_pub = <<EndOfMessage
-terraform:ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAAAgQClIqY2ukU+vVw+ZYMcbRFtmgbpXFL9TV0yr8F7mBnBN/bevqOWpsdn6ePqU0yC9uIcU1sYfRuwPYqgvtnGSfj8WteysOblUuwsU1CGq4s5cunmvFM2dvNMZJILpw/k843Z4uC24pIbVJE7G1FoRrnj9/CN9GhdwaJxN42F8cfOHw==
+# Metadata (SSH)
+aaa_metadata_aaa-name = "terraform"
+aaa_metadata_aaa-pub_key = <<EndOfMessage
+terraform:ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQClUEbe96eykDQPeK3Eizjz9E6/QIglt/1cpsz5UVvO4DKw8yOYg2ikUuHrgdUKX//93yNyrHPgQSoRph/zEw1TWgNwWnXPo9XjRWt+QYz1hV69Ut4ONoRCQYlRmdXSMaQojQDTwX6/t8cFzSRjLk1dzuitTDJ+M9LK1rLCxawQGMo51GdbzwmEBBAKxHA7umoTeyvYTicTGtSZa4kJlnWkMWT1zgdbfjVaKhc/nxkjpDReyEUSxWn0RV8YSnk1cSdVXzgm3ZN1iJ6kgBgefJKjkS1p/rpS8j2+gesnCbGISYjXc9PM/WEH+HP7n+42ue37NqOACsPOBLX8SW+KOzsaI7IL1JxM9kroddnDaq8dhR6HRv/e+A9+rk7DaDRnoEk/IrWDD9y7BDrzFeBFH1qYoVcrn3i6akMJ/2fWjbenQ46+tyvOZjnioih1BUtqOLN0ZUIaakKaSxS1SJpb5LAhSEg3gJozYPLdOPKim42ms7Q39beYAzcFmfLr3DrAvlk=
+EndOfMessage
+aaa_metadata_bbb-name = "ansible"
+aaa_metadata_bbb-pub_key = <<EndOfMessage
+ansible:ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQClUEbe96eykDQPeK3Eizjz9E6/QIglt/1cpsz5UVvO4DKw8yOYg2ikUuHrgdUKX//93yNyrHPgQSoRph/zEw1TWgNwWnXPo9XjRWt+QYz1hV69Ut4ONoRCQYlRmdXSMaQojQDTwX6/t8cFzSRjLk1dzuitTDJ+M9LK1rLCxawQGMo51GdbzwmEBBAKxHA7umoTeyvYTicTGtSZa4kJlnWkMWT1zgdbfjVaKhc/nxkjpDReyEUSxWn0RV8YSnk1cSdVXzgm3ZN1iJ6kgBgefJKjkS1p/rpS8j2+gesnCbGISYjXc9PM/WEH+HP7n+42ue37NqOACsPOBLX8SW+KOzsaI7IL1JxM9kroddnDaq8dhR6HRv/e+A9+rk7DaDRnoEk/IrWDD9y7BDrzFeBFH1qYoVcrn3i6akMJ/2fWjbenQ46+tyvOZjnioih1BUtqOLN0ZUIaakKaSxS1SJpb5LAhSEg3gJozYPLdOPKim42ms7Q39beYAzcFmfLr3DrAvlk=
 EndOfMessage
 
-ansible_user = "ansible"
-ansible_ssh_key_pub = <<EndOfMessage
-ansible:ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAAAgQCi8wHVecPaj12wH4gSUoUBs8wP+skNRKvx1N5S7MKFRu8bt4plAKKKS2HzFtOSECsXycQ2q5LVUQCMwWklBYiW9uhAE0g22QPQq/Oseu70q/liUdFIHuRXKC8HI3wRCNKxKvvml0RcMSciSNK5knUbyoGEvB13tQrKTSHiYX+seQ==
-EndOfMessage
+# Networking
+aaa_vpc_aaa-name = "network"
 
-bastion_name = "bastion"
-bastion_tags = [
+aaa_router_aaa-name = "router"
+aaa_router_aaa-region = "us-central1"
+
+aaa_router_nat_aaa-name = "router-nat"
+aaa_router_nat_aaa-count = 1 # Number of addresses available for Cloud NAT
+
+# Instance (Bastion)
+aaa_instance_aaa-name = "bastion"
+aaa_instance_aaa-image = "centos-cloud/centos-7"
+aaa_instance_aaa-tags = [
   "bastion"]
-bastion_machine_type = "n1-standard-4"
-bastion_network_cidr = "10.0.1.0/24"
+aaa_instance_aaa-type = "e2-highcpu-2"
+aaa_instance_aaa-cidr = "10.0.1.0/24"
 
-openshift_master_name = "openshift-master"
-openshift_master_image = "centos-cloud/centos-7"
-openshift_master_count = 1
-openshift_master_tags = [
-  "openshift",
-  "openshift-master",
-  "all"]
-openshift_master_machine_type = "n1-standard-8"
-openshift_master_network_cidr = "10.0.10.0/24"
-
-openshift_compute_name = "openshift-compute"
-openshift_compute_image = "centos-cloud/centos-7"
-openshift_compute_count = 1
-openshift_compute_tags = [
-  "openshift",
-  "openshift-compute",
-  "all"]
-openshift_compute_machine_type = "n1-standard-8"
-openshift_compute_network_cidr = "10.0.11.0/24"
-
-openshift_infra_name = "openshift-infra"
-openshift_infra_image = "centos-cloud/centos-7"
-openshift_infra_count = 1
-openshift_infra_tags = [
-  "openshift",
-  "openshift-infra",
-  "all"]
-openshift_infra_machine_type = "n1-standard-8"
-openshift_infra_network_cidr = "10.0.12.0/24"
-
-openshift_lb_name = "openshift-lb"
-openshift_lb_image = "centos-cloud/centos-7"
-openshift_lb_count = 1
-openshift_lb_tags = [
+# Instance (Openshift - Load Balancer)
+bbb_instance_aaa-name = "openshift-lb"
+bbb_instance_aaa-image = "centos-cloud/centos-7"
+bbb_instance_aaa-count = 2
+bbb_instance_aaa-tags = [
   "openshift",
   "openshift-lb",
   "all"]
-openshift_lb_machine_type = "n1-standard-8"
-openshift_lb_network_cidr = "10.0.13.0/24"
+bbb_instance_aaa-type = "e2-highcpu-2"
+bbb_instance_aaa-cidr = "10.0.13.0/24"
+
+# Instance (Openshift - Master)
+bbb_instance_bbb-name = "openshift-master"
+bbb_instance_bbb-image = "centos-cloud/centos-7"
+bbb_instance_bbb-count = 2
+bbb_instance_bbb-tags = [
+  "openshift",
+  "openshift-master",
+  "all"]
+bbb_instance_bbb-type = "e2-highcpu-2"
+bbb_instance_bbb-cidr = "10.0.10.0/24"
+
+# Instance (Openshift - Compute)
+bbb_instance_ccc-name = "openshift-compute"
+bbb_instance_ccc-image = "centos-cloud/centos-7"
+bbb_instance_ccc-count = 2
+bbb_instance_ccc-tags = [
+  "openshift",
+  "openshift-compute",
+  "all"]
+bbb_instance_ccc-type = "e2-highcpu-2"
+bbb_instance_ccc-cidr = "10.0.11.0/24"
+
+# Instance (Openshift - Infrastructure)
+bbb_instance_ddd-name = "openshift-infra"
+bbb_instance_ddd-image = "centos-cloud/centos-7"
+bbb_instance_ddd-count = 2
+bbb_instance_ddd-tags = [
+  "openshift",
+  "openshift-infra",
+  "all"]
+bbb_instance_ddd-type = "e2-highcpu-2"
+bbb_instance_ddd-cidr = "10.0.12.0/24"
