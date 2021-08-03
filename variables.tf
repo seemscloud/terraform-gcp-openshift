@@ -28,6 +28,14 @@ variable "aaa_router_nat_aaa-count" {
   type = string
 }
 
+variable "aaa_dns_aaa-name" {
+  type = string
+}
+
+variable "aaa_dns_aaa-dns_name" {
+  type = string
+}
+
 # Metadata (SSH)
 variable "aaa_metadata_aaa-name" {
   type = string

@@ -19,7 +19,10 @@ aaa_router_aaa-name = "router"
 aaa_router_aaa-region = "us-central1"
 
 aaa_router_nat_aaa-name = "router-nat"
-aaa_router_nat_aaa-count = 1 # Number of addresses available for Cloud NAT
+aaa_router_nat_aaa-count = 1
+
+aaa_dns_aaa-name = "openshift.internal"
+aaa_dns_aaa-dns_name = "openshift.internal."
 
 # Instance (Bastion)
 aaa_instance_aaa-name = "bastion"
@@ -43,7 +46,7 @@ bbb_instance_aaa-cidr = "10.0.13.0/24"
 # Instance (Openshift - Master)
 bbb_instance_bbb-name = "openshift-master"
 bbb_instance_bbb-image = "centos-cloud/centos-7"
-bbb_instance_bbb-count = 2
+bbb_instance_bbb-count = 3
 bbb_instance_bbb-tags = [
   "openshift",
   "openshift-master",
@@ -76,7 +79,7 @@ bbb_instance_ddd-cidr = "10.0.12.0/24"
 # Instance (Openshift - etcd)
 bbb_instance_eee-name = "openshift-etcd"
 bbb_instance_eee-image = "centos-cloud/centos-7"
-bbb_instance_eee-count = 2
+bbb_instance_eee-count = 3
 bbb_instance_eee-tags = [
   "openshift",
   "openshift-etcd",

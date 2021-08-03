@@ -14,6 +14,9 @@ module "networking" {
   aaa_router_nat_aaa-name = local.aaa_router_nat_aaa-name
   aaa_router_nat_aaa-count = var.aaa_router_nat_aaa-count
 
+  aaa_dns_aaa-name = var.aaa_dns_aaa-name
+  aaa_dns_aaa-dns_name = var.aaa_dns_aaa-dns_name
+
   # Instances (Bastion)
   aaa_instance_aaa-name = local.aaa_instance_aaa-name
   aaa_instance_aaa-cidr = var.aaa_instance_aaa-cidr
