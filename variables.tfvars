@@ -5,11 +5,11 @@ aaa_zone_aaa = "us-central1-a"
 # Metadata (SSH)
 aaa_metadata_aaa-name = "terraform"
 aaa_metadata_aaa-pub_key = <<EndOfMessage
-terraform:ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQClUEbe96eykDQPeK3Eizjz9E6/QIglt/1cpsz5UVvO4DKw8yOYg2ikUuHrgdUKX//93yNyrHPgQSoRph/zEw1TWgNwWnXPo9XjRWt+QYz1hV69Ut4ONoRCQYlRmdXSMaQojQDTwX6/t8cFzSRjLk1dzuitTDJ+M9LK1rLCxawQGMo51GdbzwmEBBAKxHA7umoTeyvYTicTGtSZa4kJlnWkMWT1zgdbfjVaKhc/nxkjpDReyEUSxWn0RV8YSnk1cSdVXzgm3ZN1iJ6kgBgefJKjkS1p/rpS8j2+gesnCbGISYjXc9PM/WEH+HP7n+42ue37NqOACsPOBLX8SW+KOzsaI7IL1JxM9kroddnDaq8dhR6HRv/e+A9+rk7DaDRnoEk/IrWDD9y7BDrzFeBFH1qYoVcrn3i6akMJ/2fWjbenQ46+tyvOZjnioih1BUtqOLN0ZUIaakKaSxS1SJpb5LAhSEg3gJozYPLdOPKim42ms7Q39beYAzcFmfLr3DrAvlk=
+terraform:ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDiqdSV9/dcsMlN90d8wajnfkbHnLqhnL3YvN5l/+zFI++2aWAw9h/IociSUl+dxA/Gxyq5eurdilktuIi0oceX80hNAgyfijxb6Pd3ZHgzmzra4AiTbiDgYH8/XMAVxtl62almAjCT3h4KRL4pdnv8nZGPyZzs2FCj0/NPPdvScc1vWh5b68ubsLkxIFD3TOPzvhulo4e37GWHKAGn9DKztXFQ9cMkA+8guSB2AKtYiRVnug2CZFyHw86Ufb7euRjZiKR8apfijkGnRdPtM7d8jv8X8WaD9VSb2VGHnT0GIuGGj9H6ik6hUa82NkO8TOYDkz1rQa/otjZrLslTQo7OoPr+FQuylTaJic+bBnvTwSeUSYvz22IwaZPetfqmV6ofg4868fb3x3xuAR7AokIRh75/1K/MnuD6Ljiu9mQ2kR7oEEzxr48/zV96ZYNiggbvxslISanLEZykL4RfabbEdNTnijkeFSW21j49PHN1YJkyxGoKncdJHmUk9RxNAXM=
 EndOfMessage
 aaa_metadata_bbb-name = "ansible"
 aaa_metadata_bbb-pub_key = <<EndOfMessage
-ansible:ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQClUEbe96eykDQPeK3Eizjz9E6/QIglt/1cpsz5UVvO4DKw8yOYg2ikUuHrgdUKX//93yNyrHPgQSoRph/zEw1TWgNwWnXPo9XjRWt+QYz1hV69Ut4ONoRCQYlRmdXSMaQojQDTwX6/t8cFzSRjLk1dzuitTDJ+M9LK1rLCxawQGMo51GdbzwmEBBAKxHA7umoTeyvYTicTGtSZa4kJlnWkMWT1zgdbfjVaKhc/nxkjpDReyEUSxWn0RV8YSnk1cSdVXzgm3ZN1iJ6kgBgefJKjkS1p/rpS8j2+gesnCbGISYjXc9PM/WEH+HP7n+42ue37NqOACsPOBLX8SW+KOzsaI7IL1JxM9kroddnDaq8dhR6HRv/e+A9+rk7DaDRnoEk/IrWDD9y7BDrzFeBFH1qYoVcrn3i6akMJ/2fWjbenQ46+tyvOZjnioih1BUtqOLN0ZUIaakKaSxS1SJpb5LAhSEg3gJozYPLdOPKim42ms7Q39beYAzcFmfLr3DrAvlk=
+ansible:ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDiqdSV9/dcsMlN90d8wajnfkbHnLqhnL3YvN5l/+zFI++2aWAw9h/IociSUl+dxA/Gxyq5eurdilktuIi0oceX80hNAgyfijxb6Pd3ZHgzmzra4AiTbiDgYH8/XMAVxtl62almAjCT3h4KRL4pdnv8nZGPyZzs2FCj0/NPPdvScc1vWh5b68ubsLkxIFD3TOPzvhulo4e37GWHKAGn9DKztXFQ9cMkA+8guSB2AKtYiRVnug2CZFyHw86Ufb7euRjZiKR8apfijkGnRdPtM7d8jv8X8WaD9VSb2VGHnT0GIuGGj9H6ik6hUa82NkO8TOYDkz1rQa/otjZrLslTQo7OoPr+FQuylTaJic+bBnvTwSeUSYvz22IwaZPetfqmV6ofg4868fb3x3xuAR7AokIRh75/1K/MnuD6Ljiu9mQ2kR7oEEzxr48/zV96ZYNiggbvxslISanLEZykL4RfabbEdNTnijkeFSW21j49PHN1YJkyxGoKncdJHmUk9RxNAXM=
 EndOfMessage
 
 # Networking
@@ -32,7 +32,7 @@ aaa_instance_aaa-cidr = "10.0.1.0/24"
 # Instance (Openshift - Load Balancer)
 bbb_instance_aaa-name = "openshift-lb"
 bbb_instance_aaa-image = "centos-cloud/centos-7"
-bbb_instance_aaa-count = 2
+bbb_instance_aaa-count = 1
 bbb_instance_aaa-tags = [
   "openshift",
   "openshift-lb",
@@ -72,3 +72,14 @@ bbb_instance_ddd-tags = [
   "all"]
 bbb_instance_ddd-type = "e2-highcpu-2"
 bbb_instance_ddd-cidr = "10.0.12.0/24"
+
+# Instance (Openshift - etcd)
+bbb_instance_eee-name = "openshift-etcd"
+bbb_instance_eee-image = "centos-cloud/centos-7"
+bbb_instance_eee-count = 2
+bbb_instance_eee-tags = [
+  "openshift",
+  "openshift-etcd",
+  "all"]
+bbb_instance_eee-type = "e2-highcpu-2"
+bbb_instance_eee-cidr = "10.0.14.0/24"

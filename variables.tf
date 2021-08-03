@@ -165,3 +165,28 @@ variable "bbb_instance_ddd-cidr" {
 variable "bbb_instance_ddd-type" {
   type = string
 }
+
+# Instance (Openshift - etcd)
+variable "bbb_instance_eee-name" {
+  type = string
+}
+
+variable "bbb_instance_eee-image" {
+  type = string
+}
+
+variable "bbb_instance_eee-count" {
+  type = number
+}
+
+variable "bbb_instance_eee-tags" {
+  type = list(string)
+}
+
+variable "bbb_instance_eee-cidr" {
+  type = string
+}
+
+variable "bbb_instance_eee-type" {
+  type = string
+}

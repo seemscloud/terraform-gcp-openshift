@@ -88,3 +88,16 @@ variable "bbb_instance_ddd-count" {
 variable "bbb_instance_ddd-cidr" {
   type = string
 }
+
+# Instances (Openshift - etcd)
+variable "bbb_instance_eee-name" {
+  type = string
+}
+
+variable "bbb_instance_eee-count" {
+  type = string
+}
+
+variable "bbb_instance_eee-cidr" {
+  type = string
+}

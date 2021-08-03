@@ -21,7 +21,16 @@ resource "google_compute_router_nat" "aaa_router_nat_aaa" {
       "ALL_IP_RANGES"]
   }
 
+  subnetwork {
+    name = google_compute_subnetwork.bbb_instance_eee.self_link
+    source_ip_ranges_to_nat = [
+      "ALL_IP_RANGES"]
+  }
+
   depends_on = [
     google_compute_router.aaa_router_aaa,
-    google_compute_address.aaa_router_nat_aaa]
+    google_compute_address.aaa_router_nat_aaa,
+    google_compute_subnetwork.bbb_instance_ccc,
+    google_compute_subnetwork.bbb_instance_ddd,
+    google_compute_subnetwork.bbb_instance_eee]
 }

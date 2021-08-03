@@ -41,6 +41,10 @@ variable "bbb_instance_aaa-type" {
   type = string
 }
 
+variable "bbb_instance_aaa-subnetwork_name" {
+  type = string
+}
+
 # Instances (Openshift - Master)
 variable "bbb_instance_bbb-name" {
   type = string
@@ -67,6 +71,10 @@ variable "bbb_instance_bbb-external_addresses" {
 }
 
 variable "bbb_instance_bbb-type" {
+  type = string
+}
+
+variable "bbb_instance_bbb-subnetwork_name" {
   type = string
 }
 
@@ -99,6 +107,10 @@ variable "bbb_instance_ccc-type" {
   type = string
 }
 
+variable "bbb_instance_ccc-subnetwork_name" {
+  type = string
+}
+
 # Instances (Openshift - Infrastructure)
 variable "bbb_instance_ddd-name" {
   type = string
@@ -125,6 +137,43 @@ variable "bbb_instance_ddd-cidr" {
 //}
 
 variable "bbb_instance_ddd-type" {
+  type = string
+}
+
+variable "bbb_instance_ddd-subnetwork_name" {
+  type = string
+}
+
+# Instances (Openshift - etcd)
+variable "bbb_instance_eee-name" {
+  type = string
+}
+
+variable "bbb_instance_eee-image" {
+  type = string
+}
+
+variable "bbb_instance_eee-count" {
+  type = number
+}
+
+variable "bbb_instance_eee-tags" {
+  type = list(string)
+}
+
+variable "bbb_instance_eee-cidr" {
+  type = string
+}
+
+//variable "bbb_instance_eee-external_addresses" {
+//  type = list(string)
+//}
+
+variable "bbb_instance_eee-type" {
+  type = string
+}
+
+variable "bbb_instance_eee-subnetwork_name" {
   type = string
 }
 

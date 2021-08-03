@@ -17,7 +17,7 @@ resource "google_compute_instance" "bbb_instance_bbb" {
   }
 
   network_interface {
-    subnetwork = var.bbb_instance_bbb-name
+    subnetwork = var.bbb_instance_bbb-subnetwork_name
 
     access_config {
       nat_ip = element(var.bbb_instance_bbb-external_addresses, count.index)

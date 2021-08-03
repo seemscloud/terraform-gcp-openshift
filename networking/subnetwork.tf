@@ -47,3 +47,13 @@ resource "google_compute_subnetwork" "bbb_instance_ddd" {
   depends_on = [
     google_compute_network.aaa_vpc_aaa-name]
 }
+
+resource "google_compute_subnetwork" "bbb_instance_eee" {
+  name = var.bbb_instance_eee-name
+  ip_cidr_range = var.bbb_instance_eee-cidr
+  region = var.aaa_region_aaa
+  network = google_compute_network.aaa_vpc_aaa-name.id
+
+  depends_on = [
+    google_compute_network.aaa_vpc_aaa-name]
+}

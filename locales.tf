@@ -14,4 +14,5 @@ locals {
   bbb_instance_bbb-name = "${local.aaa_prefix_aaa-name}-${var.bbb_instance_bbb-name}"
   bbb_instance_ccc-name = "${local.aaa_prefix_aaa-name}-${var.bbb_instance_ccc-name}"
   bbb_instance_ddd-name = "${local.aaa_prefix_aaa-name}-${var.bbb_instance_ddd-name}"
+  bbb_instance_eee-name = "${local.aaa_prefix_aaa-name}-${var.bbb_instance_eee-name}"
 }

@@ -37,4 +37,9 @@ module "networking" {
   bbb_instance_ddd-name = local.bbb_instance_ddd-name
   bbb_instance_ddd-count = var.bbb_instance_ddd-count
   bbb_instance_ddd-cidr = var.bbb_instance_ddd-cidr
+
+  # Instances (Openshift - etcd)
+  bbb_instance_eee-name = local.bbb_instance_eee-name
+  bbb_instance_eee-count = var.bbb_instance_eee-count
+  bbb_instance_eee-cidr = var.bbb_instance_eee-cidr
 }

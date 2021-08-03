@@ -46,6 +46,10 @@ variable "aaa_instance_aaa-external_addresses" {
   type = string
 }
 
+variable "aaa_instance_aaa-subnetwork_name" {
+  type = string
+}
+
 # Dependencies
 variable "dependencies" {
   type = list(string)

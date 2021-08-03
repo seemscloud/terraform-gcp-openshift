@@ -19,8 +19,8 @@ module "bastion" {
   aaa_instance_aaa-type = var.aaa_instance_aaa-type
   aaa_instance_aaa-cidr = var.aaa_instance_aaa-cidr
   aaa_instance_aaa-external_addresses = module.networking.aaa_instance_aaa-external_address
+  aaa_instance_aaa-subnetwork_name = module.networking.aaa_instance_aaa-subnetwork_name
 
   dependencies = [
-    "module.defaults",
     "module.networking"]
 }
